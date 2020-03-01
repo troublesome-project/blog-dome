@@ -47,6 +47,9 @@ export default {
         box-shadow: 0 0.05rem 0.05rem;
         color: #e6e6e6;
     }
+    .modular_box_list:hover {
+        cursor: pointer;
+    }
     .modular_box_listone{
         background-color: #909399;
     }
