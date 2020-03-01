@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="left_box" :style="'height:' + (this.Height - 130) / 100 + 'rem'">
+        <div class="left_box" :style="'height:' + (Height - 130) / 100 + 'rem'">
             <ul class="left_ul">
-                <li v-for="item in tableList" :key="item.type">{{item.title}}</li>
+                <li v-for="item in tableList" :key="item.type" @click="change(item.type)" :class="[types === item.type ? 'left_li' : '']">{{item.title}}</li>
             </ul>
         </div>
     </div>
@@ -18,6 +18,7 @@ export default {
     },
     data() {
         return {
+            types: 0,
             tableList: [
                 { title: 'git篇', type: 0 },
                 { title: 'DOM节点操作', type: 1 },
@@ -25,6 +26,13 @@ export default {
                 { title: 'js数组操作方法', type: 3 },
                 { title: 'vue生命周期详解', type: 4 }
             ]
+        }
+    },
+    methods: {
+        // 切换
+        change(type) {
+            this.types = type
+            this.$emit('type', type)
         }
     },
     mounted() {
@@ -53,10 +61,14 @@ export default {
         }
         li:hover {
             cursor: pointer;
-            background-color: #6d3353;
+            background-color: rgba(40, 18, 61, 1);
+            color: #E6E6E6;
         }
         li+li {
             border-top: 0.01rem solid #333333;
+        }
+        .left_li {
+            background-color: rgba(40, 18, 61, 1);
         }
     }
 }

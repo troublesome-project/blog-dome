@@ -1,12 +1,13 @@
 <template>
     <div>
         <Header/>
-        <div class="leftBox">
-            <LeftView :Height="leftHeight" />
-        </div>
-        
-        <div>
-            <!-- <RightView /> -->
+        <div class="bodyBox">
+            <div class="leftBox">
+                <LeftView :Height="leftHeight" :types="types" @type="getTypes" />
+            </div>
+            <div class="rightBox">
+                <RightView :types="types" ref="change" />
+            </div>
         </div>
     </div>
 </template>
@@ -23,7 +24,15 @@ export default {
     data() {
         return {
             leftHeight: 0,
-            rightWidth: 0
+            rightWidth: 0,
+            types: 0
+        }
+    },
+    methods: {
+        // 切换模块
+        getTypes(row) {
+            this.types == row
+            this.$refs.change.changeTypes(row)
         }
     },
     mounted() {
@@ -32,8 +41,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.leftBox{
-    width: auto;
-    height: auto;
+.bodyBox{
+    display: flex;
+    .leftBox{
+        flex: auto;
+    }
+    .rightBox{
+        flex: auto;
+    }
 }
 </style>

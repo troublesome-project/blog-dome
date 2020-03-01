@@ -1,19 +1,18 @@
 <template>
     <div>
-        <div class="git_box">
-            git
+        <div class="dom_box">
+            DOM节点操作
         </div>
     </div>
 </template>
 <script>
-import { heightGet } from '@/uitls/domList'
 export default {
-    name: 'Gits'
+    name: 'DomOperation'
 }
 </script>
 <style lang="scss" scoped>
-.git_box {
-    padding: 0.2rem;
+.dom_box {
+    padding: 20px;
     font-size: 0.16rem;
 }
 </style>
