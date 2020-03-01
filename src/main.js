@@ -3,7 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
+// 公用组件
+import Header from './components/header'
+
+
+Vue.use(ElementUI)
+Vue.use(Header)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
