@@ -21,6 +21,11 @@ export default new Router({
       component: () => import('@/views/class/index.vue'),
     },
     {
+      path: '/music',
+      name: 'Music',
+      component: () => import('@/views/music/index.vue'),
+    },
+    {
       path: '/footer',
       name: 'Footer',
       component: () => import('@/components/footer/index.vue')

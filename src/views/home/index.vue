@@ -20,7 +20,7 @@ export default {
                 { name: '前端资料', routers: '/class', type: 'one', id: '0' },
                 { name: '名言警句', routers: '/', type: 'two', id: '1' },
                 { name: '书籍推荐', routers: '/', type: 'three', id: '2' },
-                { name: '歌曲收藏', routers: '/', type: 'four', id: '3' }
+                { name: '歌曲收藏', routers: '/music', type: 'four', id: '3' }
             ]
         }
     },
