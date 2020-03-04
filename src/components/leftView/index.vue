@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="left_box" :style="'height:' + (Height - 130) / 100 + 'rem'">
+        <div class="left_box" :style="'height:' + (Height - 130) + 'px'">
             <ul class="left_ul">
                 <li v-for="item in tableList" :key="item.type" @click="change(item.type)" :class="[types === item.type ? 'left_li' : '']">{{item.title}}</li>
             </ul>
@@ -9,35 +9,33 @@
 </template>
 <script>
 export default {
-    name: 'LeftView',
-    props: {
-        Height: {
-            type: Number,
-            default: 0
-        }
-    },
-    data() {
-        return {
-            types: 0,
-            tableList: [
-                { title: 'git篇', type: 0 },
-                { title: 'DOM节点操作', type: 1 },
-                { title: 'vue项目搭建', type: 2 },
-                { title: 'js数组操作方法', type: 3 },
-                { title: 'vue生命周期详解', type: 4 }
-            ]
-        }
-    },
-    methods: {
-        // 切换
-        change(type) {
-            this.types = type
-            this.$emit('type', type)
-        }
-    },
-    mounted() {
-        
+  name: 'LeftView',
+  props: {
+    Height: {
+      type: Number,
+      default: 0
     }
+  },
+  data () {
+    return {
+      types: 0,
+      tableList: [
+        { title: 'git篇', type: 0 },
+        { title: 'DOM节点操作', type: 1 },
+        { title: 'vue项目搭建', type: 2 },
+        { title: 'js常用方法', type: 3 },
+        { title: 'vue生命周期', type: 4 }
+      ]
+    }
+  },
+  methods: {
+    // 切换
+    change (type) {
+      this.types = type
+      this.$emit('type', type)
+    }
+  },
+  mounted () {}
 }
 </script>
 <style lang="scss" scoped>
@@ -48,7 +46,7 @@ export default {
     padding: 0;
     .left_ul {
         display: block;
-        padding: 0 20px;
+        padding: 0 0.2rem;
         margin: 0;
         padding: 0;
         width: 100%;
