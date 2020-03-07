@@ -1,40 +1,53 @@
 <template>
-    <div>
-        <div class="right_box" :style="'width:' + (rightWidth - 200) / 100 + 'rem;' + 'height:' + (rightHeight - 130) / 100 + 'rem'">
-            <Gits v-if="types === 0" />
-            <DomOperation v-else-if="types === 1" />
-        </div>
+  <div>
+    <div class="right_box" :style="'height:' + (Height - 130) + 'px'">
+      <Gits v-if="types === 0" />
+      <DomOperation v-else-if="types === 1" />
+      <ProjectBuild v-else-if="types === 2" />
+      <JsMethod v-else-if="types === 3" />
     </div>
+  </div>
 </template>
 <script>
 import Gits from '@/components/rightView/gits'
 import DomOperation from '@/components/rightView/domOperation'
-import { heightGet, widthGet } from '@/uitls/domList'
+import ProjectBuild from '@/components/rightView/projectBuild'
+import JsMethod from '@/components/rightView/jsMethod'
 export default {
-    name: 'RightView',
-    components: {
-        Gits,
-        DomOperation
+  name: 'RightView',
+  components: {
+    Gits,
+    DomOperation,
+    ProjectBuild,
+    JsMethod
+  },
+  props: {
+    Height: {
+      type: Number,
+      default: 0
     },
-    data() {
-        return {
-            rightHeight: 0,
-            rightWidth: 0,
-            types: 0
-        }
-    },
-    methods: {
-        changeTypes(type) {
-            this.types = type
-        }
-    },
-    mounted() {
-        this.rightHeight = heightGet()
-        this.rightWidth = widthGet()
-        // console.log(document.documentElement.clientWidth)
+    Width: {
+      type: Number,
+      default: 0
     }
+  },
+  data () {
+    return {
+      types: 0
+    }
+  },
+  methods: {
+    changeTypes (type) {
+      this.types = type
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
-
+.right_box {
+  overflow-y: auto;
+}
+.right_box::-webkit-scrollbar {
+  width: 0.01rem;
+}
 </style>
