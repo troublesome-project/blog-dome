@@ -3,7 +3,8 @@
     <div class="life_box">
       <ul>
         <li>
-          <h3></h3>
+          <p></p>
+          <div></div>
         </li>
       </ul>
     </div>
@@ -11,7 +12,14 @@
 </template>
 <script>
 export default {
-  name: 'LifeCycle'
+  name: 'LifeCycle',
+  data () {
+    return {
+      dataList: [
+        { }
+      ]
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
