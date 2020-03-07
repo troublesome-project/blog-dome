@@ -74,7 +74,10 @@
 </template>
 <script>
 export default {
-  name: 'DomOperation'
+  name: 'DomOperation',
+  data () {
+    return {}
+  }
 }
 </script>
 <style lang="scss" scoped>

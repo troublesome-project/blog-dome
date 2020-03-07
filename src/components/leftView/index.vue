@@ -21,10 +21,10 @@ export default {
       types: 0,
       tableList: [
         { title: 'git篇', type: 0 },
-        { title: 'DOM节点操作', type: 1 },
-        { title: 'vue项目搭建', type: 2 },
-        { title: 'js常用方法', type: 3 },
-        { title: 'vue生命周期', type: 4 }
+        { title: 'DOM节点操作篇', type: 1 },
+        { title: 'vue项目搭建篇', type: 2 },
+        { title: 'js常用方法篇', type: 3 },
+        { title: '生命周期篇', type: 4 }
       ]
     }
   },

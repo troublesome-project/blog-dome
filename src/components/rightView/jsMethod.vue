@@ -2,36 +2,11 @@
     <div>
         <div class="method_box">
             <h3>js数组及字符串的基本操作方法</h3>
-            <!-- <ul>
-                <li>
-                    <h3>一.数组的基本操作方法</h3>
-                </li>
-                <li>
-                    <div><span>push()</span><span>向数组末尾添加一个或多个元素</span></div>
-                    <div><span>pop()</span><span>删除数组最后一位元素</span></div>
-                    <div><span>unshift()</span><span>向数组前添加一个或多个元素</span></div>
-                    <div><span>shift()</span><span>删除数组第一位元素</span></div>
-                    <div><span>concat()</span><span>连接两个数组</span></div>
-                    <div><span>reverse()</span><span>反转数组</span></div>
-                    <div><span>splice()</span><span>替换指定位置数组元素</span></div>
-                    <div><span>toString()</span><span>数组转为字符串</span></div>
-                </li>
-            </ul> -->
-            <table>
-                <thead>
-                    <tr>
-                        <th v-for="item in tableHead" :key="item">{{item}}</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="item in tableBody" :key="item.ids">
-                        <td>{{item.name}}</td>
-                        <td>{{item.types}}</td>
-                        <td>{{item.text}}</td>
-                        <td>{{item.isNot}}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <el-table :data="tableBody" border style="width:100%;" center>
+                <el-table-column label="方法名" width="120" prop="name" fixed="left"></el-table-column>
+                <el-table-column label="类型" width="80" prop="types"></el-table-column>
+                <el-table-column label="作用" min-width="350" prop="text"></el-table-column>
+            </el-table>
         </div>
     </div>
 </template>
@@ -40,19 +15,30 @@ export default {
   name: 'JsMethod',
   data () {
     return {
-      tableHead: ['方法名', '类型', '作用', '是否改变原字段'],
+      heightTab: 0,
       tableBody: [
-        {name: 'push()', types: '数组', text: '向数组末尾添加一个或多个元素', isNot: 'Y', ids: 1},
-        {name: 'pop()', types: '数组', text: '删除数组最后一位元素', isNot: 'Y', ids: 2},
-        {name: 'unshift()', types: '数组', text: '向数组前添加一个或多个元素', isNot: 'Y', ids: 3},
-        {name: 'shift()', types: '数组', text: '删除数组第一位元素', isNot: 'Y', ids: 4},
-        {name: 'concat()', types: '数组', text: '连接两个数组', isNot: 'N', ids: 5},
-        {name: 'reverse()', types: '数组', text: '反转数组', isNot: 'Y', ids: 6},
-        {name: 'splice()', types: '数组', text: '替换指定位置数组元素', isNot: 'Y', ids: 7},
-        {name: 'toString()', types: '数组', text: '数组转为字符串', isNot: 'N', ids: 8},
-        {name: 'sort()', types: '数组', text: '将数组进行排序', isNot: 'Y', ids: 9},
-        {name: 'filter()', types: '数组', text: '将数组按条件过滤', isNot: 'N', ids: 10},
-        {name: 'every()', types: '数组', text: '依据判断条件，数组的元素是否全满足', isNot: 'N', ids: 11}
+        {name: 'push()', types: '数组', text: '向数组末尾添加一个或多个元素', ids: 1},
+        {name: 'pop()', types: '数组', text: '删除数组最后一位元素', ids: 2},
+        {name: 'unshift()', types: '数组', text: '向数组前添加一个或多个元素', ids: 3},
+        {name: 'shift()', types: '数组', text: '删除数组第一位元素', ids: 4},
+        {name: 'concat()', types: '数组', text: '连接两个数组', ids: 5},
+        {name: 'reverse()', types: '数组', text: '反转数组', ids: 6},
+        {name: 'splice()', types: '数组', text: '替换指定位置数组元素', ids: 7},
+        {name: 'toString()', types: '数组', text: '数组转为字符串', ids: 8},
+        {name: 'sort()', types: '数组', text: '将数组进行排序', ids: 9},
+        {name: 'filter()', types: '数组', text: '将数组按条件过滤', ids: 10},
+        {name: 'every()', types: '数组', text: '依据判断条件，数组的元素是否全满足', ids: 11},
+        {name: 'some()', types: '数组', text: '依据判断条件，数组的元素是否有一个满足', ids: 12},
+        {name: 'join()', types: '数组', text: '把数组中的所有元素用指定分隔符分隔并转为字符串', ids: 13},
+        {name: 'search()', types: '字符串', text: '搜索特定值的字符串，返回匹配的位置', ids: 14},
+        {name: 'slice()', types: '字符串', text: '提取字符串的某个部分', ids: 15},
+        {name: 'substring()', types: '字符串', text: '截取字符串[start, end)', ids: 16},
+        {name: 'substr()', types: '字符串', text: '截取字符串(开始下标, N)', ids: 17},
+        {name: 'replace()', types: '字符串', text: '替换在字符串中指定的值', ids: 18},
+        {name: 'toUpperCase()', types: '字符串', text: '把字符串转换为大写', ids: 19},
+        {name: 'toLowerCase()', types: '字符串', text: '把字符串转换为小写', ids: 20},
+        {name: 'trim()', types: '字符串', text: '删除字符串两端的空白符', ids: 21},
+        {name: 'split()', types: '字符串', text: '字符串转换为数组', ids: 22}
       ]
     }
   }
@@ -62,77 +48,5 @@ export default {
 .method_box {
     padding: 0 0.2rem 0.2rem 0.2rem;
     font-size: 0.16rem;
-    table {
-        display: block;
-        background-color: #222222;
-        color: #E6E6E6;
-        font-size: 0.14rem;
-        overflow-x: auto;
-        thead, tbody{
-            display: block;
-            tr{
-                display: flex;
-                th,td {
-                    // flex: 1;
-                    text-align: center;
-                    padding: 0.1rem 0;
-                }
-                th:nth-of-type(1) {
-                    width: 1rem;
-                }
-                th:nth-of-type(2) {
-                    width: 1rem;
-                }
-                th:nth-of-type(4) {
-                    width: 2rem;
-                }
-                th:nth-of-type(3){
-                    flex: auto;
-                }
-                td:nth-of-type(3){
-                    flex: auto;
-                }
-                td:nth-of-type(1){
-                    width: 1rem;
-                }
-                td:nth-of-type(2){
-                    width: 1rem;
-                }
-                td:nth-of-type(4){
-                    width: 2rem;
-                }
-                th+th, td+td{
-                    border-left: 1px solid #999999;
-                }
-            }
-            tr{
-                border-top: 1px solid #999999;
-            }
-        }
-    }
-    ul{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        li{
-            div{
-                padding: 0.1rem 0.2rem;
-                border-radius: 0.04rem;
-                background-color: #222222;
-                color: #E6E6E6;
-                span:nth-of-type(1){
-                    display: inline-block;
-                    width: 0.8rem;
-                    height: auto;
-                }
-                span+span{
-                    margin-left: 20px;
-                }
-            }
-            div+div{
-                margin-top: 10px;
-            }
-        }
-    }
 }
 </style>
