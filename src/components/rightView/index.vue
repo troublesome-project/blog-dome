@@ -5,6 +5,7 @@
       <DomOperation v-else-if="types === 1" />
       <ProjectBuild v-else-if="types === 2" />
       <JsMethod v-else-if="types === 3" />
+      <LifeCycle v-else-if="types === 4" />
     </div>
   </div>
 </template>
@@ -13,13 +14,15 @@ import Gits from '@/components/rightView/gits'
 import DomOperation from '@/components/rightView/domOperation'
 import ProjectBuild from '@/components/rightView/projectBuild'
 import JsMethod from '@/components/rightView/jsMethod'
+import LifeCycle from '@/components/rightView/lifeCycle.vue'
 export default {
   name: 'RightView',
   components: {
     Gits,
     DomOperation,
     ProjectBuild,
-    JsMethod
+    JsMethod,
+    LifeCycle
   },
   props: {
     Height: {
