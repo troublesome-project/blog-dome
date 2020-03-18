@@ -18,7 +18,17 @@ export default new Router({
     {
       path: '/class',
       name: 'Class',
-      component: () => import('@/views/class/index.vue'),
+      component: () => import('@/views/class/index.vue')
+    },
+    {
+      path: '/aphorism',
+      name: 'Aphorism',
+      component: () => import('@/views/aphorism/index.vue')
+    },
+    {
+      path: '/poetryDetails',
+      name: 'PoetryDetails',
+      component: () => import('@/views/aphorism/components/poetryDetails.vue')
     },
     {
       path: '/footer',

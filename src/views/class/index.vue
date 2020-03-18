@@ -3,10 +3,10 @@
         <Header/>
         <div class="bodyBox">
             <div class="leftBox">
-                <LeftView :Height="leftHeight" :types="types" @type="getTypes" />
+                <LeftView :tableList="tableList" :Height="leftHeight" :types="types" @type="getTypes" />
             </div>
             <div class="rightBox">
-                <RightView :types="types" :Height="leftHeight" :Width="rightWidth" ref="change" />
+                <RightView :types="types" :tableType="tableType" :Height="leftHeight" :Width="rightWidth" ref="change" />
             </div>
         </div>
     </div>
@@ -25,7 +25,15 @@ export default {
     return {
       leftHeight: 0,
       rightWidth: 0,
-      types: 0
+      types: 0,
+      tableType: 0,
+      tableList: [
+        { title: 'git篇', type: 0 },
+        { title: 'DOM节点操作篇', type: 1 },
+        { title: 'vue项目搭建篇', type: 2 },
+        { title: 'js常用方法篇', type: 3 },
+        { title: '生命周期篇', type: 4 }
+      ]
     }
   },
   methods: {
@@ -38,6 +46,7 @@ export default {
   mounted () {
     this.leftHeight = heightGet()
     this.rightWidth = widthGet()
+    this.tableType = Number(this.$route.query.id)
     // console.log(this.rightWidth, 'left')
   }
 }
