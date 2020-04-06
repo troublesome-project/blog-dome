@@ -1,7 +1,7 @@
 <template>
   <div class="detailBox" :style="'height:' + heights + 'px;width:' + widths + 'px;'" >
     <div class="box">
-      <h5>{{dataList.tname}}</h5>
+      <h5>《{{dataList.tname}}》</h5>
       <p class="name_box">
         <span>{{dataList.times}}</span>
         <span>{{dataList.names}}</span>
@@ -27,7 +27,7 @@ export default {
     this.widths = widthGet()
     // console.log(this.$route.params.id)
     // console.log(window.location.origin)
-    this.getData(this.$route.params.id)
+    this.getData(this.$route.query.id)
   },
   methods: {
     // 获取数据

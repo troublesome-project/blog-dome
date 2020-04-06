@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="box">
     <div class="poetry_box" :style="'height:' + (height - 160) + 'px'">
       <div class="search_box">
-        <InputSearch @searchList='getSearchList' />
+        <InputSearch :textName="textName" @searchList='getSearchList' />
       </div>
       <ul>
-        <li v-for="item in dataList" :key="item.id">
+        <li v-for="(item,index) in dataList" :key="index">
           <span>{{item.title}}</span>
-          <span class="span_title" @click="detailsChange(item.id)">{{item.tname}}</span>
+          <span class="span_title" @click="detailsChange(item.id)">《{{item.tname}}》</span>
           <span>—{{item.times}}.{{item.names}}</span>
           </li>
       </ul>
@@ -25,6 +25,7 @@ export default {
   },
   data () {
     return {
+      textName: '诗/词名',
       height: 0,
       dataList: [],
       searchData: {
@@ -41,7 +42,7 @@ export default {
     this.getData()
   },
   methods: {
-    // 数据查询筛选
+    // 数据查询筛选-需要封装
     fileData (data, searchData) {
       let dataName = []
       if (searchData.nameInput) {
@@ -125,8 +126,8 @@ export default {
     // 点击进入详情
     detailsChange (id) {
       this.$router.push({
-        name: 'PoetryDetails',
-        params: {
+        path: './poetryDetails',
+        query: {
           id
         }
       })
@@ -135,11 +136,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.box {
+  background-color: rgba(249, 204, 157, 1);
+   overflow-y: auto;
+}
+::-webkit-scrollbar {
+  display: none;
+}
 .poetry_box {
   padding: 0.1rem 0.2rem 0.2rem 0.2rem;
   background-color: rgba(249, 204, 157, 1);
-  overflow-y: auto;
-  // position: relative;
   ul {
     margin: 0;
     padding: 0;

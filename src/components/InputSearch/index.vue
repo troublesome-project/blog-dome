@@ -6,7 +6,7 @@
       </select>
       <input type="text" placeholder="请输入作者名" v-model="searchList.nameInput" />
       <input type="text" placeholder="请输入关键字" v-model="searchList.textInput" />
-      <input type="text" placeholder="请输入诗/词名" v-model="searchList.titleInput" />
+      <input type="text" :placeholder="'请输入' + textName" v-model="searchList.titleInput" />
       <button @click="searchClick">搜素</button>
     </div>
   </div>
@@ -14,6 +14,12 @@
 <script>
 export default {
   name: 'InputSearch',
+  props: {
+    textName: {
+      type: String,
+      default: ''
+    }
+  },
   data () {
     return {
       searchList: {
