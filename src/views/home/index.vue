@@ -5,7 +5,7 @@
         <div class="modular_box">
             <el-row>
                 <el-col :span='12' v-for="item in domeList" :key="item.id">
-                    <div @click="change(item.routers)" :class="'modular_box_list modular_box_list' + item.type">{{item.name}}</div>
+                  <div @click="change(item.routers, item.id)" :class="'modular_box_list modular_box_list' + item.type">{{item.name}}</div>
                 </el-col>
             </el-row>
         </div>
@@ -13,24 +13,27 @@
 </template>
 <script>
 export default {
-    name: 'Home',
-    data() {
-        return {
-            domeList: [
-                { name: '前端资料', routers: '/class', type: 'one', id: '0' },
-                { name: '名言警句', routers: '/', type: 'two', id: '1' },
-                { name: '书籍推荐', routers: '/', type: 'three', id: '2' },
-                { name: '歌曲收藏', routers: '/', type: 'four', id: '3' }
-            ]
-        }
-    },
-    methods: {
-        change(row) {
-            this.$router.push({
-                path: row
-            })
-        }
+  name: 'Home',
+  data () {
+    return {
+      domeList: [
+        { name: '前端资料', routers: '/class', type: 'one', id: '0' },
+        { name: '名言警句', routers: '/aphorism', type: 'two', id: '1' },
+        { name: '书籍推荐', routers: '/', type: 'three', id: '2' },
+        { name: '歌曲收藏', routers: '/', type: 'four', id: '3' }
+      ]
     }
+  },
+  methods: {
+    change (row, id) {
+      this.$router.push({
+        path: row,
+        query: {
+          id
+        }
+      })
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

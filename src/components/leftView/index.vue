@@ -14,18 +14,15 @@ export default {
     Height: {
       type: Number,
       default: 0
+    },
+    tableList: {
+      type: Array,
+      default: () => []
     }
   },
   data () {
     return {
-      types: 0,
-      tableList: [
-        { title: 'git篇', type: 0 },
-        { title: 'DOM节点操作篇', type: 1 },
-        { title: 'vue项目搭建篇', type: 2 },
-        { title: 'js常用方法篇', type: 3 },
-        { title: '生命周期篇', type: 4 }
-      ]
+      types: 0
     }
   },
   methods: {

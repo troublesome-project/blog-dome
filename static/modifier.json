@@ -1,0 +1,120 @@
+{
+  "data": [
+    {
+      "types": "一.表单修饰符",
+      "list": [
+        {
+          "names": ".lazy",
+          "use": "input输入完成，光标离开才更新视图",
+          "id": 1
+        },
+        {
+          "names": ".trim",
+          "use": "过滤首尾多输入的空格",
+          "id": 2
+        },
+        {
+          "names": ".number",
+          "use": "如果先输入的是数字，它会限制只能输入数字。如果先输入的是字符，则无效",
+          "id": 3
+        }
+      ]
+    },
+    {
+      "types": "二.事件修饰符",
+      "list": [
+        {
+          "names": ".stop",
+          "use": "阻止事件冒泡（给子节点加）。相当于event.stopPropagation()方法",
+          "id": 1
+        },
+        {
+          "names": ".prevent",
+          "use": "点击提交按钮时阻止对表单的提交。相当于event.preventDefault()",
+          "id": 2
+        },
+        {
+          "names": ".self",
+          "use": "阻止事件冒泡（给父节点加）",
+          "id": 3
+        },
+        {
+          "names": ".once",
+          "use": "绑定事件只触发一次",
+          "id": 4
+        },
+        {
+          "names": ".capture",
+          "use": "反向事件冒泡（由大及小触发）",
+          "id": 5
+        },
+        {
+          "names": ".passive",
+          "use": "解决监听滚动事件时，网页变卡的问题。相当于给onscroll事件加上.lazy修饰符",
+          "id": 6
+        },
+        {
+          "names": ".native",
+          "use": "把vue组件转化为一个普通的标签。注意：使用.native修饰符来操作普通html标签会令事件失效",
+          "id": 7
+        }
+      ]
+    },
+    {
+      "types": "三.鼠标按钮修饰符",
+      "list": [
+        {
+          "names": ".left",
+          "use": "左键点击",
+          "id": 1
+        },
+        {
+          "names": ".right",
+          "use": "右键点击",
+          "id": 2
+        },
+        {
+          "names": ".middle",
+          "use": "中键点击",
+          "id": 3
+        }
+      ]
+    },
+    {
+      "types": "四.键值修饰符",
+      "list": [
+        {
+          "names": ".keyCode",
+          "use": "指定按下某一个键触发",
+          "id": 1
+        },
+        {
+          "names": ".exact",
+          "use": "限制系统修饰键",
+          "id": 2
+        }
+      ],
+      "text": [".enter", ".tab", ".delete", ".space", ".esc", ".up", ".down", ".left", ".right", ".ctrl", ".alt", "meta", ".shift"]
+    },
+    {
+      "types": "五.v-bind修饰符",
+      "list": [
+        {
+          "names": ".sync",
+          "use": "子组件向父组件传值",
+          "id": 1
+        },
+        {
+          "names": ".prop",
+          "use": "通过自定义属性存储变量，避免暴露数据。防止污染html结构",
+          "id": 2
+        },
+        {
+          "names": ".camel",
+          "use": "不区分大小写",
+          "id": 3
+        }
+      ]
+    }
+  ]
+}

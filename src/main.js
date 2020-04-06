@@ -3,16 +3,19 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
+import axios from 'axios'
+import 'element-ui/lib/theme-chalk/index.css'
 
 // 公用组件
 import Header from './components/header'
-
+import Pagers from './components/pagesList'
 
 Vue.use(ElementUI)
 Vue.use(Header)
+Vue.use(Pagers)
 Vue.config.productionTip = false
+Vue.prototype.$axios = axios
 
 /* eslint-disable no-new */
 new Vue({

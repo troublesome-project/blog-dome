@@ -39,16 +39,16 @@ export default {
       ],
       wxDataList: [
         { title: 'onLoad', text: '页面创建时执行', id: 1 },
-        { title: 'onShow', text: '页面出现在前台时执行', id: 1 },
-        { title: 'onReady', text: '页面首次渲染完毕时执行', id: 1 },
-        { title: 'onHide', text: '页面从前台变为后台时执行', id: 1 },
-        { title: 'onUnload', text: '页面销毁时执行', id: 1 },
-        { title: 'onPullDownRefresh', text: '触发下拉刷新时执行', id: 1 },
-        { title: 'onReachBottom', text: '页面触底时执行', id: 1 },
-        { title: 'onShareAppMessage', text: '页面被用户分享时执行', id: 1 },
-        { title: 'onPageScroll', text: '页面滚动时执行', id: 1 },
-        { title: 'onResize', text: '页面尺寸变化时执行', id: 1 },
-        { title: 'onTabItemTap', text: 'tab 点击时执行', id: 1 }
+        { title: 'onShow', text: '页面出现在前台时执行', id: 2 },
+        { title: 'onReady', text: '页面首次渲染完毕时执行', id: 3 },
+        { title: 'onHide', text: '页面从前台变为后台时执行', id: 4 },
+        { title: 'onUnload', text: '页面销毁时执行', id: 5 },
+        { title: 'onPullDownRefresh', text: '触发下拉刷新时执行', id: 6 },
+        { title: 'onReachBottom', text: '页面触底时执行', id: 7 },
+        { title: 'onShareAppMessage', text: '页面被用户分享时执行', id: 8 },
+        { title: 'onPageScroll', text: '页面滚动时执行', id: 9 },
+        { title: 'onResize', text: '页面尺寸变化时执行', id: 10 },
+        { title: 'onTabItemTap', text: 'tab 点击时执行', id: 11 }
       ]
     }
   }
