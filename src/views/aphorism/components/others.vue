@@ -13,6 +13,7 @@
   </div>
 </template>
 <script>
+import { getPath } from '../../../uitls/domList'
 export default {
   name: 'Others',
   data () {
@@ -26,7 +27,7 @@ export default {
   },
   methods: {
     getData () {
-      let urls = window.location.origin
+      let urls = getPath()
       this.$axios.get(urls + '/static/others.json').then(res => {
         this.lists = res.data.dataList
         console.log(res)
@@ -42,7 +43,7 @@ div {
   ul {
     list-style: none;
     display: flex;
-    // border: 1px solid #000;
+    // border: 0.01rem solid #000;
     padding: 0;
     margin: 0;
     li {
@@ -56,7 +57,7 @@ div {
         div {
             width: 100%;
             font-size: 0.14rem;
-            border-top: 1px solid #000;
+            border-top: 0.01rem solid #000;
             padding: 0.05rem 0;
             span {
                 display: inline;
@@ -64,11 +65,11 @@ div {
             }
         }
         // div+div {
-        //     border-top: 1px solid #000;
+        //     border-top: 0.01rem solid #000;
         // }
     }
     li+li {
-        border-left: 1px solid #000;
+        border-left: 0.01rem solid #000;
     }
   }
 }

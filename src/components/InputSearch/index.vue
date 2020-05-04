@@ -49,24 +49,29 @@ export default {
 </script>
 <style lang="scss" scoped>
 .searchBox {
+  // width: 100%;
   margin: 0;
   padding: 0;
+  // height: 0.4rem;
   font-size: 0.14rem;
   line-height: 0.4rem;
   background-color: rgba(249, 204, 157, 1);
-  input {
-    width: 1.0rem;
-    height: 0.2rem;
-    vertical-align: middle;
-  }
-  select {
-    width: 0.6rem;
-    height: 0.26rem;
-    vertical-align: middle;
-  }
-  button {
-    height: 0.26rem;
-    vertical-align: middle;
+  div {
+    // position: relative;
+    input {
+      width: 1.0rem;
+      height: 0.2rem;
+      vertical-align: middle;
+    }
+    select {
+      width: 0.6rem;
+      height: 0.26rem;
+      vertical-align: middle;
+    }
+    button {
+      height: 0.26rem;
+      vertical-align: middle;
+    }
   }
 }
 </style>

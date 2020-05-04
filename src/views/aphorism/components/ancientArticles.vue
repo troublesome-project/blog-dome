@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <div class="ancient_box" :style="'height:' + (height - 160) + 'px'">
+    <div class="ancient_box" :style="'height:' + (height/100 - 1.60) + 'rem'">
       <div class="search_box">
         <InputSearch :textName="textName" @searchList='getSearchList' />
       </div>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- <div class="header_box">CKW、的资料卡</div> -->
-        <Header/>
+        <!-- <Header/> -->
         <div class="modular_box">
             <el-row>
                 <el-col :span='12' v-for="item in domeList" :key="item.id">
@@ -19,10 +19,12 @@ export default {
       domeList: [
         { name: '前端资料', routers: '/class', type: 'one', id: '0' },
         { name: '名言警句', routers: '/aphorism', type: 'two', id: '1' },
-        { name: '书籍推荐', routers: '/', type: 'three', id: '2' },
+        { name: '书籍推荐', routers: '/books', type: 'three', id: '2' },
         { name: '歌曲收藏', routers: '/', type: 'four', id: '3' }
       ]
     }
+  },
+  mounted () {
   },
   methods: {
     change (row, id) {

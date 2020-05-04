@@ -1,5 +1,5 @@
 <template>
-  <div class="box" :style="'height:' + (height - 160) + 'px;line-height:' + (height - 160) + 'px;'">暂无内容~</div>
+  <div class="box" :style="'height:' + (height/100 - 1.60) + 'rem;line-height:' + (height/100 - 1.60) + 'rem;'">暂无内容~</div>
 </template>
 <script>
 import { heightGet } from '@/uitls/domList'
