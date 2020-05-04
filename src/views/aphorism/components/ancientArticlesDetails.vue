@@ -1,5 +1,5 @@
 <template>
-  <div class="ancient_box" :style="'height:' + heights + 'px;width:' + widths + 'px;'">
+  <div class="ancient_box" :style="'height:' + (heights/100 - 1.30) + 'rem;'">
     <div class="left_box">
       <div>
         <h3>
@@ -8,7 +8,7 @@
           <span class="title_box">·{{dataList.name}}</span>
         </h3>
         <div>
-          <textarea :style="'height:' + (heights - 80) + 'px;'" readonly name="" id="" v-model="dataList.text" />
+          <textarea :style="'height:' + (heights/100 - 2.10) + 'rem;'" readonly name="" id="" v-model="dataList.text" />
         </div>
       </div>
     </div>
@@ -16,7 +16,7 @@
       <div>
         <h3>译文</h3>
         <div>
-          <textarea :style="'height:' + (heights - 80) + 'px;'" readonly name="" id="" v-model="dataList.interpret" />
+          <textarea :style="'height:' + (heights/100 - 2.10) + 'rem;'" readonly name="" id="" v-model="dataList.interpret" />
         </div>
       </div>
     </div>

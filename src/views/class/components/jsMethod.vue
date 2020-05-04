@@ -11,6 +11,7 @@
     </div>
 </template>
 <script>
+import { getPath } from '../../../uitls/domList'
 export default {
   name: 'JsMethod',
   data () {
@@ -24,7 +25,7 @@ export default {
   },
   methods: {
     getData () {
-      let urls = window.location.origin
+      let urls = getPath()
       this.$axios.get(urls + '/static/jsMethods.json').then(res => {
         this.tableBody = res.data.data
       })

@@ -1,0 +1,130 @@
+{
+  "data": [
+    {
+      "title": "一.JavaScript对象",
+      "type": 1,
+      "list": [
+        {
+          "type": 1,
+          "names": "Array",
+          "text": "存储多个值",
+          "id": 1
+        },
+        {
+          "type": 1,
+          "names": "Boolean",
+          "text": "包含true和false两个值",
+          "id": 2
+        },
+        {
+          "type": 1,
+          "names": "Date",
+          "text": "用于处理日期和时间",
+          "id": 3
+        },
+        {
+          "type": 1,
+          "names": "Math",
+          "text": "用于执行数学任务",
+          "id": 4
+        },
+        {
+          "type": 1,
+          "names": "Number",
+          "text": "原始数值的包装对象",
+          "id": 5
+        },
+        {
+          "type": 1,
+          "names": "String",
+          "text": "用于处理文本（字符串）",
+          "id": 6
+        },
+        {
+          "type": 1,
+          "names": "RegExp",
+          "text": "表示正则表达式，对字符串执行模式匹配",
+          "id": 7
+        },
+        {
+          "type": 1,
+          "names": "Function",
+          "text": "可用于所有内建的 JavaScript 对象",
+          "id": 8
+        },
+        {
+          "type": 1,
+          "names": "Events",
+          "text": "通过发生的事件来驱动函数执行",
+          "id": 9
+        }
+      ]
+    },
+    {
+      "title": "二.Browser 对象",
+      "type": 2,
+      "list": [
+        {
+          "type": 2,
+          "names": "Window",
+          "text": "表示浏览器中打开的窗口",
+          "id": 10
+        },
+        {
+          "type": 2,
+          "names": "Navigator",
+          "text": "包含有关浏览器的信息",
+          "id": 11
+        },
+        {
+          "type": 2,
+          "names": "Screen",
+          "text": "包含有关客户端显示屏幕的信息",
+          "id": 12
+        },
+        {
+          "type": 2,
+          "names": "History",
+          "text": "包含用户（在浏览器窗口中）访问过的 URL。可通过 window.history 属性对其进行访问",
+          "id": 13
+        },
+        {
+          "type": 2,
+          "names": "Location",
+          "text": "包含有关当前 URL 的信息。可通过 window.location 属性来访问",
+          "id": 14
+        }
+      ]
+    },
+    {
+      "title": "三.HTML DOM 对象",
+      "type": 3,
+      "list": [
+        {
+          "type": 3,
+          "names": "Document",
+          "text": "Window 对象的一部分，可通过 window.document 属性对其进行访问",
+          "id": 15
+        },
+        {
+          "type": 3,
+          "names": "Element",
+          "text": "表示 HTML 元素",
+          "id": 16
+        },
+        {
+          "type": 3,
+          "names": "Attr",
+          "text": "表示 HTML 属性",
+          "id": 17
+        },
+        {
+          "type": 3,
+          "names": "Event",
+          "text": "事件的状态，函数不会在事件发生前被执行",
+          "id": 18
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header/>
+        <!-- <Header/> -->
         <div class="bodyBox">
             <div class="leftBox">
                 <LeftView :tableList="tableList" :Height="leftHeight" :types="types" @type="getTypes" />
@@ -28,12 +28,13 @@ export default {
       types: 0,
       tableType: 0,
       tableList: [
-        { title: 'git篇', type: 0 },
-        { title: 'DOM节点操作篇', type: 1 },
-        { title: 'vue项目搭建篇', type: 2 },
-        { title: 'js常用方法篇', type: 3 },
-        { title: '生命周期篇', type: 4 },
-        { title: 'vue修饰符篇', type: 5 }
+        { title: 'git篇', type: 0, path: '/class/gits' },
+        { title: 'DOM节点操作篇', type: 1, path: '/class/domOperation' },
+        { title: 'vue项目搭建篇', type: 2, path: '/class/projectBuild' },
+        { title: 'js常用方法篇', type: 3, path: '/class/jsMethod' },
+        { title: '生命周期篇', type: 4, path: '/class/lifeCycle' },
+        { title: 'vue修饰符篇', type: 5, path: '/class/vueModifier' },
+        { title: '对象方法篇', type: 6, path: '/class/winObject' }
       ]
     }
   },

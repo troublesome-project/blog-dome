@@ -1,5 +1,6 @@
 <template>
-  <div class="detailBox" :style="'height:' + heights + 'px;width:' + widths + 'px;'" >
+  <!-- <div class="detailBox" :style="'height:' + heights + 'px;width:' + widths + 'px;'" > -->
+  <div class="detailBox" :style="'height:' + (heights/100 - 1.30) + 'rem;'" >
     <div class="box">
       <h5>《{{dataList.tname}}》</h5>
       <p class="name_box">
@@ -11,7 +12,7 @@
   </div>
 </template>
 <script>
-import { heightGet, widthGet } from '@/uitls/domList'
+import { heightGet, widthGet, getPath } from '@/uitls/domList'
 export default {
   name: 'PoetryDetails',
   data () {
@@ -32,7 +33,7 @@ export default {
   methods: {
     // 获取数据
     getData (id) {
-      let urls = window.location.origin
+      let urls = getPath()
       this.$axios.get(urls + '/static/poetry.json').then(res => {
         this.dataList = res.data.dataList
         for (let i of res.data.dataList) {

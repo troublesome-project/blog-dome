@@ -12,6 +12,7 @@
   </div>
 </template>
 <script>
+import { getPath } from '../../../uitls/domList'
 export default {
   name: 'VueModifier',
   data () {
@@ -24,7 +25,7 @@ export default {
   },
   methods: {
     getDatas () {
-      let urls = window.location.origin
+      let urls = getPath()
       this.$axios.get(urls + '/static/modifier.json').then(res => {
         // console.log(res)
         this.dataList = res.data.data

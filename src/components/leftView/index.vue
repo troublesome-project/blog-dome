@@ -1,8 +1,11 @@
 <template>
     <div>
-        <div class="left_box" :style="'height:' + (Height - 130) + 'px'">
+        <div class="left_box" :style="'height:' + (Height/100 - 1.30) + 'rem'">
             <ul class="left_ul">
-                <li v-for="item in tableList" :key="item.type" @click="change(item.type)" :class="[types === item.type ? 'left_li' : '']">{{item.title}}</li>
+                <li v-for="item in tableList" :key="item.type" @click="change(item.type, item.path)" :class="[types === item.type ? 'left_li' : '']">{{item.title}}</li>
+                <!-- <li v-for="(item, index) in tableList" :key="index" :class="[types === item.type ? 'left_li' : '']">
+                  <router-link :to="{path: item.path}">{{item.title}}</router-link>
+                </li> -->
             </ul>
         </div>
     </div>
@@ -27,9 +30,12 @@ export default {
   },
   methods: {
     // 切换
-    change (type) {
+    change (type, path) {
       this.types = type
       this.$emit('type', type)
+      this.$router.push({
+        path
+      })
     }
   },
   mounted () {}
@@ -48,17 +54,28 @@ export default {
         padding: 0;
         width: 100%;
         height: auto;
-        color: #E6E6E6;
         font-size: 0.16rem;
         li {
-            padding: 0.2rem;
             display: block;
+            padding: 0.2rem;
+            color: #E6E6E6;
+            // a {
+            //   display: block;
+            //   padding: 0.2rem;
+            //   width: 100%;
+            //   height: 100%;
+            //   color: #E6E6E6;
+            //   text-decoration: none;
+            // }
         }
         li:hover {
-            cursor: pointer;
-            background-color: rgba(40, 18, 61, 1);
-            color: #E6E6E6;
+          color: #E6E6E6;
+          cursor: pointer;
+          background-color: rgba(40, 18, 61, 1);
         }
+        // li:hover a {
+        //   color: #E6E6E6;
+        // }
         li+li {
             border-top: 0.01rem solid #333333;
         }

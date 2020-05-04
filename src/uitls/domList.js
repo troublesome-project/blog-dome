@@ -7,6 +7,6 @@ export function widthGet () {
   return document.documentElement.clientWidth
 }
 // 获取网络地址
-export function getUrl () {
-  return window.location
+export function getPath () {
+  return window.location.origin
 }

@@ -17,6 +17,20 @@ Vue.use(Pagers)
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 
+document.body.style.overflow = 'hidden'
+const setHtmlFontSize = () => {
+  const htmlDom = document.getElementsByTagName('html')[0]
+  let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth
+  if (htmlWidth >= 750) {
+    htmlWidth = 750
+  }
+  if (htmlWidth <= 320) {
+    htmlWidth = 320
+  }
+  htmlDom.style.fontSize = `${htmlWidth / 7.5}px`
+}
+window.onresize = setHtmlFontSize
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

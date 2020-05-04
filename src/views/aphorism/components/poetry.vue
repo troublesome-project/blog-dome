@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <div class="poetry_box" :style="'height:' + (height - 160) + 'px'">
+    <div class="poetry_box" :style="'height:' + (height/100 - 1.60) + 'rem'">
       <div class="search_box">
         <InputSearch :textName="textName" @searchList='getSearchList' />
       </div>
@@ -17,7 +17,7 @@
 </template>
 <script>
 import InputSearch from '../../../components/InputSearch/index'
-import { heightGet } from '@/uitls/domList'
+import { heightGet, getPath } from '@/uitls/domList'
 export default {
   name: 'Poetry',
   components: {
@@ -107,7 +107,7 @@ export default {
     },
     // 获取数据
     getData () {
-      let urls = window.location.origin
+      let urls = getPath()
       this.$axios.get(urls + '/static/poetry.json').then(res => {
         // if (type) {
         //   console.log(type)
@@ -126,7 +126,7 @@ export default {
     // 点击进入详情
     detailsChange (id) {
       this.$router.push({
-        path: './poetryDetails',
+        path: '/aphorism/poetryDetails',
         query: {
           id
         }
