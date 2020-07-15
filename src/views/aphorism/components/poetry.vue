@@ -1,14 +1,17 @@
 <template>
   <div class="box">
-    <div class="poetry_box" :style="'height:' + (height/100 - 1.60) + 'rem'">
-      <div class="search_box">
+     <!-- :style="'height:' + (height/100 - 1.60) + 'rem'" -->
+    <div class="poetry_box">
+      <!-- <div class="search_box">
         <InputSearch :textName="textName" @searchList='getSearchList' />
-      </div>
+      </div> -->
       <ul>
         <li v-for="(item,index) in dataList" :key="index">
-          <span>{{item.title}}</span>
-          <span class="span_title" @click="detailsChange(item.id)">《{{item.tname}}》</span>
-          <span>—{{item.times}}.{{item.names}}</span>
+          <div>{{item.title}}</div>
+          <div>
+            <span class="span_title" @click="detailsChange(item.id)">《{{item.tname}}》</span>
+            <span>—{{item.times}}.{{item.names}}</span>
+          </div>
           </li>
       </ul>
       <!-- <Pagers ref="change" /> -->
@@ -144,7 +147,7 @@ export default {
   display: none;
 }
 .poetry_box {
-  padding: 0.1rem 0.2rem 0.2rem 0.2rem;
+  padding: 0.2rem 0 0.2rem 0;
   background-color: rgba(249, 204, 157, 1);
   ul {
     margin: 0;
@@ -152,15 +155,22 @@ export default {
     list-style: none;
     margin-top: 0.3rem;
     li {
-      padding: 0.1rem 0;
-      font-size: 0.14rem;
-      .span_title {
-        cursor: pointer;
+      padding: 0.15rem 0.2rem;
+      font-size: 0.24rem;
+      div:nth-of-type(2) {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        span{
+          font-size: 0.2rem;
+        }
+        span:nth-of-type(2) {
+          color: #666666;
+        }
       }
-      .span_title:hover {
-        color: red;
-        text-decoration: underline;
-      }
+    }
+    li+li {
+      border-top: 0.01rem solid #666666;
     }
   }
   .search_box {

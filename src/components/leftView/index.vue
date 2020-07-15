@@ -1,6 +1,7 @@
 <template>
     <div>
-        <div class="left_box" :style="'height:' + (Height/100 - 1.30) + 'rem'">
+       <!-- :style="'height:' + (Height/100 - 1.30) + 'rem'" -->
+        <div class="left_box">
             <ul class="left_ul">
                 <li v-for="item in tableList" :key="item.type" @click="change(item.type, item.path)" :class="[types === item.type ? 'left_li' : '']">{{item.title}}</li>
                 <!-- <li v-for="(item, index) in tableList" :key="index" :class="[types === item.type ? 'left_li' : '']">
@@ -31,6 +32,9 @@ export default {
   methods: {
     // 切换
     change (type, path) {
+      if(type === this.types) {
+        return false;
+      }
       this.types = type
       this.$emit('type', type)
       this.$router.push({
@@ -44,6 +48,7 @@ export default {
 <style lang="scss" scoped>
 .left_box {
     width: 2rem;
+    height: calc(100vh - 1.3rem);
     background-image: linear-gradient(45deg,#020031 0,rgba(16, 7, 53, 1) 100%);
     margin: 0;
     padding: 0;

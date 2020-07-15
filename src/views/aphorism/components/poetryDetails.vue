@@ -1,6 +1,7 @@
 <template>
   <!-- <div class="detailBox" :style="'height:' + heights + 'px;width:' + widths + 'px;'" > -->
-  <div class="detailBox" :style="'height:' + (heights/100 - 1.30) + 'rem;'" >
+     <!-- :style="'height:' + (heights/100 - 1.30) + 'rem;'" -->
+  <div class="detailBox">
     <div class="box">
       <h5>《{{dataList.tname}}》</h5>
       <p class="name_box">
@@ -66,6 +67,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .detailBox {
+  height: calc(100vh - 1.3rem);
   background-color: rgba(249, 204, 157, 1);
   overflow-y: auto;
   // overflow: hidden;

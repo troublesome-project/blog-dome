@@ -25,6 +25,12 @@
             </div>
         </li>
         <li>
+          <p>5.处理eslint格式</p>
+          <div>
+            npm run lint
+          </div>
+        </li>
+        <li>
             <p>5.运行项目</p>
             <div>npm run dev</div>
         </li>

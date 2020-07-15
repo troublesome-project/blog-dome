@@ -1,5 +1,6 @@
 <template>
-  <div class="ancient_box" :style="'height:' + (heights/100 - 1.30) + 'rem;'">
+  <!-- :style="'height:' + (heights/100 - 1.30) + 'rem;'" -->
+  <div class="ancient_box">
     <div class="left_box">
       <div>
         <h3>
@@ -63,12 +64,13 @@ export default {
   line-height: 2;
 }
 .ancient_box {
+  height: calc(100vh - 1.3rem);
   background-color: rgba(249, 204, 157, 1);
   overflow-y: auto;
-  display: flex;
+  // display: flex;
   font-size: 0.16rem;
   .left_box {
-    flex: 1;
+    // flex: 1;
     padding: 0.2rem;
     div {
       h3 {

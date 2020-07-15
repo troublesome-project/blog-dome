@@ -110,12 +110,12 @@ export default new Router({
       // component: () => import('@/views/aphorism/components/others.vue')
       component: resolve => (require(['@/views/aphorism/components/others'], resolve))
     },
-    {
-      path: '/footer',
-      name: 'Footer',
-      // component: () => import('@/components/footer/index.vue')
-      component: resolve => (require(['@/components/footer/index'], resolve))
-    },
+    // {
+    //   path: '/footer',
+    //   name: 'Footer',
+    //   // component: () => import('@/components/footer/index.vue')
+    //   component: resolve => (require(['@/components/footer/index'], resolve))
+    // },
     {
       path: '/footer',
       name: 'Footer',
@@ -123,12 +123,12 @@ export default new Router({
       component: resolve => (require(['@/components/footer/index'], resolve))
     },
     // 文言文页面
-    {
-      path: '/ancientArticlesDetails',
-      name: 'AncientArticlesDetails',
-      // component: () => import('@/components/footer/index.vue')
-      component: resolve => (require(['@/views/aphorism/components/ancientArticlesDetails'], resolve))
-    },
+    // {
+    //   path: '/ancientArticlesDetails',
+    //   name: 'AncientArticlesDetails',
+    //   // component: () => import('@/components/footer/index.vue')
+    //   component: resolve => (require(['@/views/aphorism/components/ancientArticlesDetails'], resolve))
+    // },
     // 书籍模块
     {
       path: '/books',
@@ -139,7 +139,23 @@ export default new Router({
         {
           path: '/books/other',
           name: 'BooksOther',
-          component: resolve => (require(['@/views/books/components/other'], resolve))
+          // component: resolve => (require(['@/views/books/components/other'], resolve))
+          component: import('@/views/books/components/other')
+        }
+      ]
+    },
+    // 音乐模块
+    {
+      path: '/musicStore',
+      name: 'MusicStore',
+      component: import('@/views/musicStore/index'),
+      // component: resolve => (require(['@/views/musicStore/index'], resolve)),
+      children: [
+        {
+          path: '/musicStore/musicList',
+          name: 'MusicList',
+          component: import('@/views/musicStore/components/musicList')
+          // component: resolve => (require(['@/views/musicStore/components/musicList'], resolve))
         }
       ]
     }
@@ -151,3 +167,11 @@ export default new Router({
     // }
   ]
 })
+// router.onError((error) => {
+//   const pattern = /Loading chunk (\d)+ failed/g;
+//   const isChunkLoadFailed = error.message.match(pattern);
+//   const targetPath = router.history.pending.fullPath;
+//   if(isChunkLoadFailed){
+//       router.replace(targetPath);
+//   }
+// })

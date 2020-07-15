@@ -1,9 +1,10 @@
 <template>
   <div class="box">
-    <div class="ancient_box" :style="'height:' + (height/100 - 1.60) + 'rem'">
-      <div class="search_box">
+     <!-- :style="'height:' + (height/100 - 1.60) + 'rem'" -->
+    <div class="ancient_box">
+      <!-- <div class="search_box">
         <InputSearch :textName="textName" @searchList='getSearchList' />
-      </div>
+      </div> -->
       <ul v-for="(item,index) in dataList" :key="index">
         <li v-for="items in item.list" :key="items.id">
           <div><h3 @click="change(items.id, index)">{{items.title}}</h3><span>{{items.dynasty}}</span><span>·{{items.name}}</span></div>

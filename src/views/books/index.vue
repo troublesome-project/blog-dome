@@ -1,73 +1,100 @@
 <template>
   <div class="box">
-    <!-- <Header/> -->
     <div class="bodyBox">
-      <!-- <ul>
-        <li v-for="(item, index) in tableList" :key="index">
-          <router-link :to="{path: item.path}">{{item.title}}</router-link>
+      <ul>
+        <li v-for="(item, index) in tableList" :key="index" @click="change(index)">
+          <!-- <div v-show="item.types === 1" class="just_box">
+            <img :src="require('../../assets/book_logo.png')" alt="">
+            <span>《{{ item.name }}》</span>
+          </div> -->
+          <div class="back_box" :style="`background:rgba(${Math.round(Math.random()*100)}, ${Math.round(Math.random()*100)}, ${Math.round(Math.random()*100)}, 0.9)`">
+            <span>名称:《{{ item.name }}》</span>
+            <span>作者:{{ item.author }}</span>
+            <span>出版时间:{{ item.date }}</span>
+          </div>
         </li>
-      </ul> -->
-      <div class="leftBox">
-        <LeftView :tableList="tableList" :Height="leftHeight" :types="types" @type="getTypes" />
-      </div>
-      <div class="rightBox">
-        <RightView :types="types" :tableType="tableType" :Height="leftHeight" :Width="rightWidth" ref="change" />
-      </div>
+      </ul>
     </div>
   </div>
 </template>
 <script>
-import LeftView from '../../components/leftView/index'
-import RightView from '../../components/rightView/index'
-import { heightGet, widthGet } from '@/uitls/domList'
+import { getPath } from '../../uitls/domList'
+import { heightGet } from '@/uitls/domList'
 export default {
   name: 'Books',
-  components: {
-    LeftView,
-    RightView
-  },
   data () {
     return {
-      types: 0,
-      tableType: 0,
-      leftHeight: 0,
-      rightWidth: 0,
-      tableList: [
-        { title: '青春', type: 0, path: '/books/other' },
-        { title: '科幻', type: 1, path: '/books/other' },
-        { title: '历史', type: 2, path: '/books/other' },
-        { title: '名著', type: 3, path: '/books/other' }
-      ]
+      heights: 0,
+      tableList: []
     }
   },
   mounted () {
-    this.leftHeight = heightGet()
-    this.rightWidth = widthGet()
-    this.tableType = Number(this.$route.query.id)
+    this.heights = heightGet()
+    this.getList()
   },
   methods: {
-    // 切换模块
-    getTypes (row) {
-    //   this.types === row
-      this.$refs.change.changeTypes(row)
+    // 数据请求
+    getList () {
+      let urls = getPath()
+      this.$axios.get(urls + '/static/books.json').then(res => {
+        console.log(res.data.data, 'res')
+        this.tableList = res.data.data
+      })
+    },
+    change (index) {
+      console.log(index)
     }
-    // // 页面
-    // change (path) {
-    //   this.$router.push({
-    //     path
-    //   })
-    // }
   }
 }
 </script>
 <style lang="scss" scoped>
+.box {
+  height: 100vh;
+  overflow-y: auto;
+}
 .bodyBox{
-    display: flex;
-    flex-wrap : nowrap;
-    font-size: 0.16rem;
-    .rightBox{
-        flex: auto;
-        overflow: hidden;
+  display: flex;
+  flex-wrap : nowrap;
+  font-size: 0.16rem;
+  background: url('../../assets/book_logo.png') 100% 100% / 100% 100% no-repeat;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding: 0.1rem;
+    li {
+      display: inline-block;
+      width: 25%;
+      .back_box {
+        height: 1.5rem;
+        margin: 0.05rem;
+        padding: 0.1rem;
+        border-radius: 0.16rem;
+        box-shadow: 0 0.05rem 0.05rem #666666;
+        // background-color: rgba(249, 204, 157, 1);
+        span {
+          display: block;
+          font-size: 0.16rem;
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space:nowrap;
+          line-height: 0.2rem;
+          color: #cccccc;
+        }
+        span:nth-of-type(1) {
+          font-size: 0.2rem;
+          color: #eeeeee;
+        }
+        span+span {
+          margin-top: 0.1rem;
+        }
+      }
+      .back_box:hover {
+        transform: translate(0,-0.05rem);
+        transition: all 0.8s;
+      }
     }
+  }
 }
 </style>

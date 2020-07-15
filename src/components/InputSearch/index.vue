@@ -60,17 +60,25 @@ export default {
     // position: relative;
     input {
       width: 1.0rem;
-      height: 0.2rem;
+      height: 0.3rem;
       vertical-align: middle;
+      font-size: 0.18rem;
     }
     select {
       width: 0.6rem;
-      height: 0.26rem;
+      height: 0.3rem;
       vertical-align: middle;
+      font-size: 0.2rem;
+      // line-height: 0.26rem;
+      option {
+        height: 0.3rem;
+      }
     }
     button {
-      height: 0.26rem;
+      height: 0.3rem;
       vertical-align: middle;
+      font-size: 0.18rem;
+      // line-height: 0.26rem;
     }
   }
 }

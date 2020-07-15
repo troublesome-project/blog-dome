@@ -20,7 +20,7 @@ export default {
         { name: '前端资料', routers: '/class', type: 'one', id: '0' },
         { name: '名言警句', routers: '/aphorism', type: 'two', id: '1' },
         { name: '书籍推荐', routers: '/books', type: 'three', id: '2' },
-        { name: '歌曲收藏', routers: '/', type: 'four', id: '3' }
+        { name: '歌曲收藏', routers: '/musicStore', type: 'four', id: '3' }
       ]
     }
   },
@@ -40,6 +40,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .modular_box{
+    height: calc(100vh - 1.3rem);
     padding: 0.2rem;
     .modular_box_list{
         margin: 0.2rem;

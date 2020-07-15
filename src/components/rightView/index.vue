@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="right_box" :style="'height:' + (Height/100 - 1.30) + 'rem'">
+     <!-- :style="'height:' + (Height/100 - 1.30) + 'rem'" -->
+    <div class="right_box">
       <el-button type="primary" @click="backHome" icon="el-icon-arrow-left">返回首页</el-button>
       <transition name="fade">
         <router-view></router-view>
@@ -75,12 +76,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .fade-enter-active, .fade-leave-avtive {
-  transition: opacity 1s
+  transition: opacity 1s;
 }
 .fade-enter, .fade-leave-to {
-  opacity: 0
+  opacity: 0;
 }
 .right_box {
+  height: calc(100vh - 1.3rem);
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
@@ -91,16 +93,16 @@ export default {
 .el-button {
   display: inline-block;
   vertical-align: middle;
-  height: 0.3rem;
-  line-height: 0.3rem;
-  padding: 0 0.05rem;
+  height: 0.42rem;
+  line-height: 0.42rem;
+  padding: 0 0.1rem;
   font-size: 0.2rem;
   background-color: rgba(102, 48, 81, 1);
   border: 0;
   color: #E6E6E6;
   position: absolute;
-  right: 0.2rem;
-  top: 0.2rem;
+  right: 0.1rem;
+  top: 0.1rem;
   z-index: 9;
 }
 </style>

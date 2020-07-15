@@ -6,10 +6,12 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
+    publicPath: '/',
+    // publicPath: './', // 发布打包
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    // assetsDir: './',
     proxyTable: {},
 
     // Various Dev Server settings
@@ -47,16 +49,19 @@ module.exports = {
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 
+    // publicPath: './', //发布打包
+    publicPath: '/',
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    // assetsDir: './',
 
     /**
      * Source Maps
      */
 
-    productionSourceMap: true,
+    productionSourceMap: true, // 发布打包 改为false
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 

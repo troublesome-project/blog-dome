@@ -31,7 +31,8 @@ export default {
             { title: '第一次提交到远程分支', text: 'git push -u origin master', id: 7 },
             { title: '提交修改到远程分支', text: 'git push', id: 8 },
             { title: '更新分支代码', text: 'git pull', id: 9 },
-            { title: '关联用户名/邮箱', text: 'git config --global user.name/email "name/email"', id: 10 }
+            { title: '关联用户名/邮箱', text: 'git config --global user.name/email "name/email"', id: 10 },
+            { title: '查看变更内容', text: 'git diff', id: 11 }
           ],
           indexs: 1
         },
@@ -42,7 +43,14 @@ export default {
             { title: '查看当前分支', text: 'git branch', id: 2 },
             { title: '创建分支', text: 'git branch `分支名`', id: 3 },
             { title: '切换分支', text: 'git checkout `分支名`', id: 4 },
-            { title: '合并分支命令', text: 'git merge', id: 5 }
+            { title: '合并分支命令', text: 'git merge', id: 5 },
+            { title: '拉取远程分支', text: 'git fetch', id: 6 },
+            { title: '列出所有本地标签', text: 'git tag', id: 7},
+            { title: '删除标签', text: 'git tag -d <tabname>', id: 8},
+            { title: '基于最新提交创建标签', text: 'git tag <tabname>', id: 9},
+            { title: '删除远程分支', text: 'git push origin --delete <branchname>', id: 10 },
+            { title: '删除本地已合并的分支', text: 'git branch -d <branchname>', id: 11 },
+            { title: '清楚本地无效分支(远程已删除本地没删除的分支)', text: 'git fetch -p', id: 12 }
           ],
           indexs: 2
         },
@@ -77,6 +85,14 @@ export default {
             { title: '查看指定日期的提交记录', text: 'git log --before={3 weeks.ago} --after={xxxx-xx-xx} --no-merges', id: 6 }
           ],
           indexs: 5
+        },
+        {
+          headText: '六.密码账号连接',
+          list: [
+            { title: '重置git认证设置', text: 'git config --system --unset credential.helper', id: 1 },
+            { title: 'git认证本地储存', text: 'git config --global credential.helper store', id: 2 }
+          ],
+          indexs: 6
         }
       ]
     }

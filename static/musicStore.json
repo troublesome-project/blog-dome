@@ -1,0 +1,98 @@
+{
+  "data": [
+    {
+      "type": 1,
+      "title": "歌曲分类",
+      "id": 1,
+      "list": [
+        {
+          "name": "KTV必点",
+          "id": 1,
+          "tableList": []
+        },
+        {
+          "name": "抖音热播",
+          "id": 2,
+          "tableList": []
+        },
+        {
+          "name": "经典回忆",
+          "id": 3,
+          "tableList": []
+        },
+        {
+          "name": "英雄时刻",
+          "id": 4,
+          "tableList": []
+        },
+        {
+          "name": "翻唱歌曲",
+          "id": 5,
+          "tableList": []
+        },
+        {
+          "name": "中文DJ",
+          "id": 6,
+          "tableList": []
+        },
+        {
+          "name": "我的收藏",
+          "id": 7,
+          "tableList": []
+        },
+        {
+          "name": "一个人听",
+          "id": 8,
+          "tableList": []
+        }
+      ]
+    },
+    {
+      "type": 2,
+      "title": "歌手推荐",
+      "id": 2,
+      "list": [
+        {
+          "name": "林俊杰",
+          "id": 1,
+          "tableList": []
+        },
+        {
+          "name": "张韶涵",
+          "id": 2,
+          "tableList": []
+        },
+        {
+          "name": "姚慧",
+          "id": 3,
+          "tableList": []
+        },
+        {
+          "name": "浙音4811",
+          "id": 4,
+          "tableList": []
+        },
+        {
+          "name": "光良",
+          "id": 5,
+          "tableList": []
+        },
+        {
+          "name": "李荣浩",
+          "id": 6,
+          "tableList": []
+        },
+        {
+          "name": "薛之谦",
+          "id": 7,
+          "tableList": []
+        },
+        {
+          "name": "张靓颖",
+          "id": 8,
+          "tableList": []
+        }
+      ]
+    }
+  ]
+}
