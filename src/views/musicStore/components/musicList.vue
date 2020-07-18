@@ -1,6 +1,6 @@
 <template>
   <div>
-    音乐模块
+    欢迎来到音乐模块，正在更新中...
   </div>
 </template>
 <script>
