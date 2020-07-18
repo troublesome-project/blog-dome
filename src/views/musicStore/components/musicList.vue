@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    音乐模块
+  </div>
 </template>
 <script>
 export default {
