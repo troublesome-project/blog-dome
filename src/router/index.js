@@ -1,23 +1,28 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '../store'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     {
       path: '/',
+      redirect: '/login'
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      // component: () => import('@/views/login/index.vue')
+      component: resolve => (require(['@/views/login/index'], resolve))
+    },
+    {
+      path: '/home',
       name: 'Home',
       // component: () => import('@/views/home/index.vue')
       component: resolve => (require(['@/views/home/index'], resolve))
     },
-    // {
-    //   path: '/login',
-    //   name: 'Login',
-    //   // component: () => import('@/views/login/index.vue')
-    //   component: resolve => (require(['@/views/login/index'], resolve))
-    // },
     // 前端模块
     {
       path: '/class',
@@ -175,3 +180,17 @@ export default new Router({
 //       router.replace(targetPath);
 //   }
 // })
+router.beforeEach((to, from, next) => {
+  if (to.path === '/login') {
+    next();
+  } else {
+    let token = store.state.userToken;
+    if (!token) {
+      next('/login');
+    } else {
+      next();
+    }
+  }
+});
+
+export default router;

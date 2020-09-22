@@ -6,10 +6,13 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import router from './router'
 import axios from 'axios'
+import store from './store';
 
 // 公用组件
 import Header from './components/header'
 import Pagers from './components/pagesList'
+// 公用css
+import '@/styles/variables.scss';
 
 Vue.use(ElementUI)
 Vue.use(Header)
@@ -35,6 +38,7 @@ window.onresize = setHtmlFontSize
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

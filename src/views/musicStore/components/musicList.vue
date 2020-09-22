@@ -1,11 +1,16 @@
 <template>
   <div>
-    音乐模块
+    
   </div>
 </template>
 <script>
 export default {
-  name: 'MusicList'
+  name: "MusicList",
+  data() {
+    return {
+
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

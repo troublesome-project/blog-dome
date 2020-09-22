@@ -24,15 +24,13 @@ export default {
       ]
     }
   },
-  mounted () {
+  mounted() {
+    // console.log(this.$store.state)
   },
   methods: {
     change (row, id) {
       this.$router.push({
-        path: row,
-        query: {
-          id
-        }
+        path: row
       })
     }
   }

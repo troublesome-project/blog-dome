@@ -50,7 +50,9 @@ export default {
             { title: '基于最新提交创建标签', text: 'git tag <tabname>', id: 9},
             { title: '删除远程分支', text: 'git push origin --delete <branchname>', id: 10 },
             { title: '删除本地已合并的分支', text: 'git branch -d <branchname>', id: 11 },
-            { title: '清楚本地无效分支(远程已删除本地没删除的分支)', text: 'git fetch -p', id: 12 }
+            { title: '清楚本地无效分支(远程已删除本地没删除的分支)', text: 'git fetch -p', id: 12 },
+            { title: '清楚本地无效分支(远程已删除本地没删除的分支)', text: 'git remote prune origin', id: 13 },
+            { title: '查看remote地址，远程分支，还有本地分支与之相对应关系等信息', text: 'git remote show origin', id: 14 }
           ],
           indexs: 2
         },

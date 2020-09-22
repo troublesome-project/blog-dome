@@ -11,7 +11,7 @@
     </div>
 </template>
 <script>
-import { getPath } from '../../../uitls/domList'
+import { getPath } from '@/uitls/domList';
 export default {
   name: 'JsMethod',
   data () {

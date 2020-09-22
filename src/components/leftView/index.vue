@@ -36,13 +36,12 @@ export default {
         return false;
       }
       this.types = type
-      this.$emit('type', type)
+      // this.$emit('type', type)
       this.$router.push({
         path
       })
     }
-  },
-  mounted () {}
+  }
 }
 </script>
 <style lang="scss" scoped>

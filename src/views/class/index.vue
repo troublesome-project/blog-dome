@@ -3,7 +3,7 @@
         <!-- <Header/> -->
         <div class="bodyBox">
             <div class="leftBox">
-                <LeftView :tableList="tableList" :Height="leftHeight" :types="types" @type="getTypes" />
+                <LeftView :tableList="tableList" :Height="leftHeight" :types="types" />
             </div>
             <div class="rightBox">
                 <RightView :types="types" :tableType="tableType" :Height="leftHeight" :Width="rightWidth" ref="change" />
@@ -42,10 +42,12 @@ export default {
     // 切换模块
     getTypes (row) {
     //   this.types === row
-      this.$refs.change.changeTypes(row)
+      // this.$refs.change.changeTypes(row)
+      // console.log(row)
     }
   },
   mounted () {
+    this.types = 0;
     this.leftHeight = heightGet()
     this.rightWidth = widthGet()
     this.tableType = Number(this.$route.query.id)

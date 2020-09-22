@@ -75,6 +75,13 @@
             <div>npm install vue-awesome-swiper --save</div>
         </li>
         <li>
+            <p>8.安装base64加密</p>
+            <div>
+              npm install js-base64 --save<br/>
+              npm install babel-preset-env --save
+            </div>
+        </li>
+        <li>
             <h3>三.卸载插件</h3>
         </li>
         <li>
