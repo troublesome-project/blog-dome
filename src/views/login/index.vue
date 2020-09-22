@@ -1,21 +1,17 @@
 <template>
   <div class="box">
     <div class="login">
-      <img
-        :src="imgUrl"
-        class="login-img"
-        alt=""
-      >
+      <img :src="imgUrl" class="login-img" alt />
       <div class="fix-con">
         <div class="con">
           <el-row class="con-title">账号登录</el-row>
           <el-row class="con-list">
-            <span class="con-list_title">账号: </span>
+            <span class="con-list_title">账号:</span>
             <el-input type="text" class="con-list_input" v-model="params.userName" />
             <span v-if="userRule" class="con-list_comfig">{{ userComfig }}</span>
           </el-row>
           <el-row class="con-list">
-            <span class="con-list_title">密码: </span>
+            <span class="con-list_title">密码:</span>
             <el-input type="password" class="con-list_input" v-model="params.password" />
             <span v-if="passwordRule" class="con-list_comfig">{{ passwordComfig }}</span>
           </el-row>
@@ -27,51 +23,86 @@
   </div>
 </template>
 <script>
-import { getPath } from '@/uitls/domList';
+import { getPath } from "@/uitls/domList";
 export default {
   name: "Login",
   data() {
     return {
-      imgUrl: require('@/assets/login.jpg'),
+      imgUrl: require("@/assets/login.jpg"),
       params: {
-        userName: '',
-        password: ''
+        userName: "",
+        password: "",
       },
-      userComfig: '请输入用户名', // 用户名警告
-      passwordComfig: '请输入密码', // 密码警告
+      userComfig: "请输入用户名", // 用户名警告
+      passwordComfig: "请输入密码", // 密码警告
       userRule: false,
       passwordRule: false,
-      tableList: []
-    }
+      tableList: [
+        {
+          id: "1",
+          userName: "chengkewei",
+          password: "mengjie521",
+          restrict: "1",
+        },
+        {
+          id: "2",
+          userName: "oumengjie",
+          password: "mengjie521",
+          restrict: "2",
+        },
+        {
+          id: "3",
+          userName: "wangshuai",
+          password: "woaiqianhan1314",
+          restrict: "3",
+        },
+        {
+          id: "4",
+          userName: "lijingli",
+          password: "LIJINGLI1998",
+          restrict: "3",
+        },
+        {
+          id: "99",
+          userName: "usernames",
+          password: "hei123456",
+          restrict: "5",
+        },
+      ],
+    };
   },
   methods: {
     // 点击登录
     async signBtn() {
-      if (!this.params.userName) return this.userRule = true;
-      if (!this.params.password) return this.userRule = false, this.passwordRule = true;
-      await this.getUserInfos();
+      if (!this.params.userName) return (this.userRule = true);
+      if (!this.params.password)
+        return (this.userRule = false), (this.passwordRule = true);
+      // await this.getUserInfos();
       for (const i of this.tableList) {
-        if (i.userName === this.params.userName && i.password === this.params.password) {
-          sessionStorage.setItem('token', this.params.userName);
-          return this.$router.push('/home');
+        if (
+          i.userName === this.params.userName &&
+          i.password === this.params.password
+        ) {
+          sessionStorage.setItem("token", this.params.userName);
+          return this.$router.push("/home");
         } else if (i.userName === this.params.userName) {
           this.userRule = false;
           this.passwordRule = true;
-          this.passwordComfig = '密码不正确';
+          this.passwordComfig = "密码不正确";
         } else {
           this.userRule = true;
-          this.userComfig = '用户名不正确';
+          this.userComfig = "用户名不正确";
         }
       }
     },
     // 数据请求
-    async getUserInfos() {
-      let urls = getPath();
-      await this.$axios.get(urls + '/static/login.json').then(res => {
-        this.tableList = res.data.data;
-      })
-    }
-  }
+    // async getUserInfos() {
+    //   let urls = getPath();
+    //   await this.$axios.get(urls + "/static/login.json").then((res) => {
+    //     this.tableList = res.data.data;
+    //   });
+    // },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -135,7 +166,7 @@ export default {
     display: flex;
     padding: 0.1rem 0;
     justify-content: center;
-    background-color: #578DEB;
+    background-color: #578deb;
     color: #ffffff;
     border-radius: 0.08rem;
     cursor: pointer;
